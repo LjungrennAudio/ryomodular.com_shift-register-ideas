@@ -1,0 +1,46 @@
+x is socket
+
+y is yellow led, r is red, g is green, b is blue, a is amber
+
+14 rows high x 8 columns width
+
+=========================================================================
+
+shit registers
+
+-------------------------------------------------------------------------
+x				SISO
+data in a	y
+x		button					x
+clear a		r	w	w	w	w	out a		a
+x
+clock in a	g							
+-------------------------------------------------------------------------
+				SIPO
+x							x
+data in a	y	w	w	w	w	out bi		a
+x		button					x
+clear a		r					out bii		a
+x							x
+clock in a	g	a	a	a	a	out biii	a
+							x
+							out biv		a
+-------------------------------------------------------------------------
+				PISO
+			x	x	x	x
+data in 		ai	aii	aiii	aiv
+x		button	y	y	y	y	x
+clear a		r	w	w	w	w	out c		a
+x			x
+clock in a	g	write/shift	b					
+-------------------------------------------------------------------------
+				PIPO
+			x	x	x	x	x
+data in 		di	dii	diii	div	out di		a
+x		button	y	y	y	y	x	
+clear d		r	w	w	w	w	ou dii		a
+x			x				x
+clock in d	g	write/shift	b		out diii	a
+							x
+							out div		a
+-------------------------------------------------------------------------
